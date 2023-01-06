@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MyApp</string>
+    <string name="welcome_back">Welcome back! Glad to see you, Again!</string>
+    <string name="log_In">Log In</string>
+    <string name="Sign_up">Sign Up</string>
+    <string name="Forgot_pass">Forgot Password?</string>
+    <string name="Or_login_with">Or Login with</string>
+    <string name="Dont_have_account">Dont Have An Account? Register Now</string>
+    <string name="join_us">Join Us!</string>
+    <string name="register">Register</string>
+    <string name="Hi">Hi!</string>
+    <string name="Farmer">Farmers,</string>
+    <string name="We_The_Staff">We the Staff Welcome You to a New Era of farming Culture.</string>
+    <string name="join">Join us in this Journey to a new Beginning.</string>
+
+
+</resources>

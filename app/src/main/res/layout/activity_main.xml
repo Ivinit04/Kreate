@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="380dp"
+        android:layout_height="600dp"
+        android:layout_marginTop="70dp" >
+
+        <ImageView
+            android:id="@+id/rice_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/rice_1"/>
+
+        <TextView
+            android:id="@+id/Hi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Hi"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginTop="50dp"/>
+
+        <TextView
+            android:id="@+id/Farmer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Farmer"
+            android:layout_below="@+id/Hi"
+            android:textSize="40sp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/we_the_staff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/We_The_Staff"
+            android:layout_below="@+id/Farmer"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="25dp"
+            android:fontFamily="sans-serif-light"/>
+
+        <TextView
+            android:id="@+id/join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/join"
+            android:layout_below="@+id/we_the_staff"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-light"/>
+
+        <Button
+            android:id="@+id/btn_logIn"
+            android:layout_width="155dp"
+            android:layout_height="55dp"
+            android:layout_below="@+id/join"
+            android:text="@string/log_In"
+            android:textSize="22sp"
+            android:layout_marginTop="110dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/background"
+            android:textColor="@color/black"
+            android:layout_alignParentEnd="true"/>
+
+        <Button
+            android:id="@+id/btn_signUp"
+            android:layout_width="155dp"
+            android:layout_height="55dp"
+            android:layout_below="@+id/btn_logIn"
+            android:text="@string/Sign_up"
+            android:textSize="22sp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/background"
+            android:textColor="@color/black"
+            android:layout_alignParentEnd="true"
+            />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

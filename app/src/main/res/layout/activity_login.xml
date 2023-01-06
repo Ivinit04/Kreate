@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login">
+
+    <RelativeLayout
+        android:layout_width="330dp"
+        android:layout_height="580dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/background">
+        
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_back"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/logIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/welcome"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/log_In"
+            android:textColor="@color/black"
+            android:textSize="23sp" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/logIn"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/edt_background"
+            android:hint="Email/Phone Number"
+            android:textColorHint="@color/black"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/pass"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/email"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/edt_background"
+            android:hint="Password"
+            android:textColorHint="@color/black"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/forgot_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pass"
+            android:text="@string/Forgot_pass"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_alignParentEnd="true"/>
+
+        <Button
+            android:id="@+id/btn_logIn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/forgot_pass"
+            android:text="@string/log_In"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btn_background"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/or_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_logIn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/Or_login_with"
+            android:textColor="@color/black"
+            android:textSize="19sp" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Dont_have_account"
+            android:background="?android:attr/selectableItemBackground"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_below="@+id/facebook"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true" />
+
+        <ImageButton
+            android:id="@+id/gmail"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/or_login"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/email"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/facebook"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/or_login"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/facebook"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/github"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/or_login"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/github"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
