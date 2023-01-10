@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login">
+    tools:context=".Login">
 
     <RelativeLayout
         android:layout_width="330dp"
@@ -64,7 +64,7 @@
             tools:ignore="TouchTargetSizeCheck" />
 
         <Button
-            android:id="@+id/forgot_pass"
+            android:id="@+id/forgot_pass_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/pass"
@@ -76,7 +76,7 @@
             android:id="@+id/btn_logIn"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/forgot_pass"
+            android:layout_below="@+id/forgot_pass_btn"
             android:text="@string/log_In"
             android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
@@ -96,6 +96,30 @@
             android:textColor="@color/black"
             android:textSize="19sp" />
 
+
+        <ImageButton
+            android:id="@+id/btn_google"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/or_login"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/google"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/btn_facebook"
+            android:layout_width="40dp"
+            android:layout_height="42dp"
+            android:layout_below="@+id/or_login"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="88dp"
+            android:layout_marginRight="90dp"
+            android:background="@drawable/facebook"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
         <Button
             android:id="@+id/btn_register"
             android:layout_width="wrap_content"
@@ -105,41 +129,9 @@
             android:fontFamily="sans-serif-condensed-medium"
             android:textSize="15sp"
             android:textColor="@color/black"
-            android:layout_below="@+id/facebook"
+            android:layout_below="@+id/btn_facebook"
             android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true" />
-
-        <ImageButton
-            android:id="@+id/gmail"
-            android:layout_width="40dp"
-            android:layout_height="45dp"
-            android:layout_below="@+id/or_login"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/email"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/facebook"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_below="@+id/or_login"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/facebook"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/github"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_below="@+id/or_login"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="30dp"
-            android:background="@drawable/github"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     </RelativeLayout>
 

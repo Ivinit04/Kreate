@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".signup">
+    tools:context=".Signup">
 
     <RelativeLayout
         android:layout_width="330dp"
@@ -95,23 +95,46 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/cnf_pass"
             android:text="@string/Sign_up"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/btn_background"
             android:textColor="@color/white"
             />
 
         <TextView
-            android:id="@+id/or_login"
+            android:id="@+id/or_signUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/btn_signUp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:fontFamily="sans-serif-condensed-medium"
-            android:text="@string/Or_login_with"
+            android:text="@string/Or_signup_with"
             android:textColor="@color/black"
             android:textSize="19sp" />
+
+        <ImageButton
+            android:id="@+id/google_btn"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/or_signUp"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/google"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/facebook_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/or_signUp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="90dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/facebook"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
 
 
     </RelativeLayout>

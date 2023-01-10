@@ -4,7 +4,9 @@
     <string name="log_In">Log In</string>
     <string name="Sign_up">Sign Up</string>
     <string name="Forgot_pass">Forgot Password?</string>
+    <string name="Reset_pass">Reset Password</string>
     <string name="Or_login_with">Or Login with</string>
+    <string name="Or_signup_with">Or Signup with</string>
     <string name="Dont_have_account">Dont Have An Account? Register Now</string>
     <string name="join_us">Join Us!</string>
     <string name="register">Register</string>

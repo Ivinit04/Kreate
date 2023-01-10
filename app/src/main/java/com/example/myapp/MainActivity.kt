@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
+
     private lateinit var btnLogin: Button
     private lateinit var btnSignup: Button
 
@@ -20,12 +21,12 @@ class MainActivity : AppCompatActivity() {
 
 
         btnLogin.setOnClickListener {
-            val intent = Intent(this, login::class.java)
+            val intent = Intent(this, Login::class.java)
             startActivity(intent)
         }
 
         btnSignup.setOnClickListener {
-            val intent = Intent(this, signup::class.java)
+            val intent = Intent(this, Signup::class.java)
             startActivity(intent)
         }
 
