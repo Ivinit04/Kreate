@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -12,10 +14,12 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_login.*
 
 class Login : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private var mIsShowPass = false
 
     private lateinit var edtEmail: EditText
     private lateinit var edtPassword: EditText
@@ -40,6 +44,13 @@ class Login : AppCompatActivity() {
 
         auth = Firebase.auth
 
+        //password Visibility
+        eye.setOnClickListener{
+            mIsShowPass = !mIsShowPass
+            showPassword(mIsShowPass)
+        }
+        showPassword(mIsShowPass)
+
         btnLogin.setOnClickListener {
 
             val email = edtEmail.text.toString().trim()
@@ -53,7 +64,7 @@ class Login : AppCompatActivity() {
                         updateUI(user)
                     } else {
                         // If sign in fails, display a message to the user.
-                        Toast.makeText(baseContext, "Authentication failed.",
+                        Toast.makeText(baseContext, "Email Or Password IS Incorrect",
                             Toast.LENGTH_SHORT).show()
 //                        updateUI(null)
                     }
@@ -71,6 +82,18 @@ class Login : AppCompatActivity() {
             startActivity(intent)
         }
 
+    }
+
+    private fun showPassword(isShow: Boolean) {
+        if(isShow){
+            pass.transformationMethod  =HideReturnsTransformationMethod.getInstance()
+            eye.setImageResource(R.drawable.ic_baseline_visibility_off_24)
+        }
+        else{
+            pass.transformationMethod  =PasswordTransformationMethod.getInstance()
+            eye.setImageResource(R.drawable.ic_baseline_visibility_24)
+        }
+        pass.setSelection(pass.text.toString().length)
     }
 
     private fun updateUI(user: FirebaseUser?) {

@@ -60,8 +60,19 @@
             android:layout_marginRight="15dp"
             android:background="@drawable/edt_background"
             android:hint="Password"
+            android:longClickable="false"
             android:textColorHint="@color/black"
             tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageView
+            android:id="@+id/eye"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/email"
+            android:src="@drawable/ic_baseline_visibility_off_24"
+            android:layout_marginTop="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"/>
 
         <Button
             android:id="@+id/forgot_pass_btn"

@@ -73,7 +73,18 @@
             android:background="@drawable/edt_background"
             android:hint="Password"
             android:textColorHint="@color/black"
+            android:longClickable="false"
             tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageView
+            android:id="@+id/eye1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/phone_No"
+            android:src="@drawable/ic_baseline_visibility_off_24"
+            android:layout_marginTop="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="25dp"/>
 
         <EditText
             android:id="@+id/cnf_pass"
@@ -86,7 +97,18 @@
             android:background="@drawable/edt_background"
             android:hint="Conform Password"
             android:textColorHint="@color/black"
+            android:longClickable="false"
             tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageView
+            android:id="@+id/eye2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pass"
+            android:src="@drawable/ic_baseline_visibility_off_24"
+            android:layout_marginTop="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="25dp" />
 
 
         <Button
