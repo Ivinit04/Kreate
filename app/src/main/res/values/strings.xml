@@ -3,6 +3,7 @@
     <string name="welcome_back">Welcome back! Glad to see you, Again!</string>
     <string name="log_In">Log In</string>
     <string name="Sign_up">Sign Up</string>
+    <string name="Sign_out">Sign Out</string>
     <string name="Forgot_pass">Forgot Password?</string>
     <string name="Reset_pass">Reset Password</string>
     <string name="Or_login_with">Or Login with</string>

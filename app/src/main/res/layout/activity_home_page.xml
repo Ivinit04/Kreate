@@ -7,8 +7,20 @@
     tools:context=".Home_Page">
 
     <TextView
+        android:id="@+id/Hi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Hi"
         android:textSize="40sp"/>
+
+    <Button
+        android:id="@+id/btn_signOut"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Hi"
+        android:text="@string/Sign_out"
+        android:layout_centerInParent="true"
+        android:background="@drawable/btn_background"
+        android:textColor="@color/white"
+        />
 </RelativeLayout>

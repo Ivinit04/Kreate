@@ -60,6 +60,7 @@
             android:layout_marginRight="15dp"
             android:background="@drawable/edt_background"
             android:hint="Password"
+            android:inputType="textPassword"
             android:longClickable="false"
             android:textColorHint="@color/black"
             tools:ignore="TouchTargetSizeCheck" />
