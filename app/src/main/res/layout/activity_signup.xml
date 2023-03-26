@@ -30,17 +30,31 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/joinUs"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/register"
             android:textColor="@color/black"
             android:textSize="23sp" />
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/register"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edt_background"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/black"
+            tools:ignore="TouchTargetSizeCheck" />
+
 
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:layout_below="@+id/register"
+            android:layout_below="@+id/name"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
@@ -56,7 +70,7 @@
             android:layout_height="35dp"
             android:layout_below="@+id/email"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/edt_background"
             android:hint="Phone Number"
@@ -71,7 +85,7 @@
             android:layout_height="35dp"
             android:layout_below="@+id/phoneNo"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/edt_background"
             android:hint="Password"
@@ -86,7 +100,7 @@
             android:layout_height="35dp"
             android:layout_below="@+id/pass"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/edt_background"
             android:hint="Conform Password"
@@ -101,7 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/phoneNo"
             android:src="@drawable/ic_baseline_visibility_off_24"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="25dp"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="25dp" />
 
@@ -111,7 +125,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/pass"
             android:src="@drawable/ic_baseline_visibility_off_24"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="25dp"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="25dp" />
 
@@ -122,7 +136,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/cnf_pass"
             android:text="@string/Sign_up"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/btn_background"
             android:textColor="@color/white"
@@ -134,7 +148,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/btn_signUp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/Or_signup_with"
             android:textColor="@color/black"
@@ -147,21 +161,11 @@
             android:layout_below="@+id/or_signUp"
             android:layout_alignParentStart="true"
             android:layout_centerInParent="true"
-            android:layout_marginLeft="90dp"
+            android:layout_marginStart="130dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/google"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/btn_facebook"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_below="@+id/or_signUp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="90dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/facebook"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
 
 

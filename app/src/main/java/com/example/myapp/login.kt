@@ -21,20 +21,29 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.Query
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
 
 class Login : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var database: FirebaseDatabase
+    private lateinit var databaseRef: DatabaseReference
+
     private var mIsShowPass = false
 
-    private lateinit var edtEmail: EditText
+    private lateinit var edtPhoneNo: EditText
     private lateinit var edtPassword: EditText
     private lateinit var btnLogin: Button
     private lateinit var btnRegister: Button
     private lateinit var btnGoogle: ImageButton
-    private lateinit var btnFacebook: ImageButton
     private lateinit var btnForgot: Button
 
     private lateinit var googleSignInClient: GoogleSignInClient
@@ -45,15 +54,17 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        edtEmail = findViewById(R.id.email)
+        edtPhoneNo = findViewById(R.id.phoneNo)
         edtPassword = findViewById(R.id.pass)
         btnLogin = findViewById(R.id.btn_logIn)
         btnRegister = findViewById(R.id.btn_register)
         btnGoogle = findViewById(R.id.btn_google)
-        btnFacebook = findViewById(R.id.btn_facebook)
         btnForgot = findViewById(R.id.forgot_pass_btn)
 
-        auth = Firebase.auth
+        auth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance()
+        databaseRef = FirebaseDatabase.getInstance().reference
+
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
@@ -73,29 +84,43 @@ class Login : AppCompatActivity() {
 
         btnLogin.setOnClickListener {
 
-            val email = edtEmail.text.toString().trim()
-            val password = edtPassword.text.toString().trim()
-            if (email.isEmpty()){
-                edtEmail.error = "Email Or PhoneNo Is Required"
+            val phone = edtPhoneNo.text.toString()
+            val password = edtPassword.text.toString()
+            if (phone.isEmpty() || phone.length != 10){
+                edtPhoneNo.error = "Enter Valid Phone Number"
                 return@setOnClickListener
-            }else if (password.isEmpty()){
-                edtPassword.error = "Password Is Required"
+            }else if (password.isEmpty() || password.length < 6){
+                edtPassword.error = "Enter Password More Than 6 Characters"
                 return@setOnClickListener
             }else{
-                auth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this) { task ->
-                        if (task.isSuccessful) {
-                            // Sign in success, update UI with the signed-in user's information
-                            val user = auth.currentUser
-                            updateUI(user)
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(baseContext, "Email Or Password IS Incorrect",
-                                Toast.LENGTH_SHORT).show()
-//                        updateUI(null)
+
+                val query: Query = databaseRef.child("users").orderByChild("phoneNumber").equalTo(phone)
+                query.addListenerForSingleValueEvent(object : ValueEventListener{
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        if(snapshot.exists()){
+                            for (item in snapshot.children){
+                                val user = item.getValue<Users>()
+                                if(user != null){
+                                    if(user.password.equals(password)){
+                                        updateUI()
+                                    }else{
+                                        Toast.makeText(baseContext,"Password Is Not Valid",Toast.LENGTH_SHORT).show()
+                                    }
+                                }
+                            }
+                        }else{
+                            Toast.makeText(baseContext,"Phone Number Is Not Valid",Toast.LENGTH_SHORT).show()
+
                         }
                     }
+
+                    override fun onCancelled(error: DatabaseError) {
+                        Toast.makeText(baseContext,error.message,Toast.LENGTH_SHORT).show()
+                    }
+
+                })
             }
+
 
         }
 
@@ -110,6 +135,7 @@ class Login : AppCompatActivity() {
         }
 
     }
+
 
     private fun signInGoogle() {
         val signInIntent = googleSignInClient.signInIntent
@@ -160,7 +186,7 @@ class Login : AppCompatActivity() {
         pass.setSelection(pass.text.toString().length)
     }
 
-    private fun updateUI(user: FirebaseUser?) {
+    private fun updateUI() {
         val intent = Intent(this , Home_Page::class.java)
         startActivity(intent)
         finish()

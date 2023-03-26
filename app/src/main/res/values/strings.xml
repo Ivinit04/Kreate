@@ -17,4 +17,11 @@
     <string name="join">Join us in this Journey to a new Beginning.</string>
 
 
+    <string name="facebook_app_id">484656896955600</string>
+    <string name="fb_login_protocol_scheme">fb484656896955600</string>
+    <string name="facebook_client_token">8aa52949ac8f5462098ba12ee15685fd</string>
+
+
+
+
 </resources>
